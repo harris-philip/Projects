@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="firstAidBaseBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pulseBaseBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="supporBasetBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="reconBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="defibBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="lifeBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="scramblerBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="overdoseBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="immunizerBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="tacticalScanBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ammoCacheBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="recoveryBtn" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="turretBaseBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                              <Component id="smartCoverBaseBtn" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="seekerBaseBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bfbBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="activeBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="airburstBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="flashbangBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="dragonbreathBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="gasChargeBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="proxFuseBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="zapperBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="clusterBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="stkyBaseBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tacticalBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="survivorBtn" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mobileBaseBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="reactiveBtn" min="-2" max="-2" attributes="0"/>
+                                  <Component id="trapperBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="extentionBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="assaultBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rechargerBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="blastShieldBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="kinBreakBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ballisticBaseBtn" min="-2" max="-2" attributes="0"/>
+                                  <Component id="concealBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="counterBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="boosterBtn" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="basePower" min="-2" pref="267" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="intSkill" min="-2" pref="171" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="skillPower" alignment="0" min="-2" pref="267" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="intSkill" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="basePower" min="-2" pref="210" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="skillPower" min="-2" pref="210" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="11" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="pulseBaseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="stkyBaseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ballisticBaseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="firstAidBaseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="turretBaseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="smartCoverBaseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="supporBasetBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="seekerBaseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mobileBaseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="reconBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bfbBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="reactiveBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="defibBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="activeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="trapperBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lifeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="airburstBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="extentionBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="scramblerBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="flashbangBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="assaultBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="overdoseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dragonbreathBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rechargerBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="immunizerBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="gasChargeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="blastShieldBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="tacticalScanBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="proxFuseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="kinBreakBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="boosterBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="zapperBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="concealBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ammoCacheBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="clusterBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="counterBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="recoveryBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tacticalBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="survivorBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="pulseBaseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pulse Base"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pulseBaseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="stkyBaseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sticky Bomb Base"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stkyBaseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ballisticBaseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ballistic Shield Base"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ballisticBaseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="firstAidBaseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="First Aid Base"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstAidBaseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="turretBaseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Turret Base"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="turretBaseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="smartCoverBaseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Smart Cover Base"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="smartCoverBaseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="supporBasetBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Support Station Base"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="supporBasetBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="seekerBaseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Seeker Mine Base"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="seekerBaseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="mobileBaseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mobile Cover Base"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mobileBaseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="skillPower">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Click on a button for Modified Skill"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="recoveryBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Recovery Link"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recoveryBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="tacticalBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tactical Link"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tacticalBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="survivorBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Survivor Link"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="survivorBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="intSkill">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="15000"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="intSkillActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Skill Power:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="basePower">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Click on a button for Base Skill"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="reconBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Recon Pack(Pulse)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reconBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bfbBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="BFB(StickyBomb)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bfbBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="reactiveBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reactive Targeting(BallisticShield)&#xa;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reactiveBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="defibBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Defibrillator(FirstAid)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="defibBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="activeBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Active Sensor(Turret)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="activeBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="trapperBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Trapper(SmartCover)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="trapperBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="lifeBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Life Support(SupportStation)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lifeBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="airburstBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Airburst(SeekerMine)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="airburstBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="extentionBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Extention(MobileCover)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="extentionBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="scramblerBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Scrambler(Pulse)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="scramblerBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="flashbangBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Flashbang(StickyBomb)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="flashbangBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="assaultBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Assault Shield(BallisticShield)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assaultBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="overdoseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Overdose(FirstAid)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="overdoseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="dragonbreathBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dragonbreath(Turret)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dragonbreathBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="rechargerBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Recharger(SmartCover)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rechargerBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="immunizerBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Immunizer(SupportStation)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="immunizerBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="gasChargeBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Gas Charge(SeekerMine)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gasChargeBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="blastShieldBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Blast Shield(MobileCover)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="blastShieldBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="tacticalScanBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tactical Scanner(Pulse)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tacticalScanBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="proxFuseBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Proximity Fuse(StickyBomb)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="proxFuseBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="kinBreakBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Kinetic Breaker(BallisticShield)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kinBreakBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="boosterBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Booster Shot(FirstAid)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boosterBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="zapperBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Zapper(Turret)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="zapperBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="concealBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Concealment(SmartCover)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="concealBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ammoCacheBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ammo Cache(SupportStation)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ammoCacheBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="clusterBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cluster(SeekerMine)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clusterBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="counterBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Countermeasures(MobileCover)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="counterBtnActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
