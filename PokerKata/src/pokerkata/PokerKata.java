@@ -37,16 +37,7 @@ public class PokerKata {
         Player black2 = new Player(sHBlack2);
         Player black3 = new Player(sHBlack3);
         Player black4 = new Player(sHBlack4);
-        
-        white1.sortHand();
-        white2.sortHand();
-        white3.sortHand();
-        white4.sortHand();
-        black1.sortHand();
-        black2.sortHand();
-        black3.sortHand();
-        black4.sortHand();
-        
+          
         
         white1.compareHands(black1, i);
         if (white1.compareHands(black1, i) == 0)

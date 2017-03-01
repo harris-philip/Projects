@@ -141,9 +141,11 @@ public class Card {
    
      public int compareValue(Card o) {
         if (this.getValue() == o.getValue())
-            return 1;
-        else
             return 0;
+        else if (this.getValue() < o.getValue())
+            return -1;
+        else
+            return 1;
     }
     
 }

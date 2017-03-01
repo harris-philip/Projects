@@ -23,23 +23,6 @@ public class Player {
     public Hand getHand() {
         return hnd;
     }
-
-    /**
-     * @param hnd the hnd to set
-     */
-    
-    public void sortHand()
-    {
-        Card tempCard;
-        for (int i = 0; i < this.getHand().crd.length-1; i++) {
-            if (this.getHand().getCard(i).getValue() < this.getHand().getCard(i+1).getValue()) 
-            {
-                    tempCard = this.getHand().getCard(i);
-                    this.getHand().setCard(this.getHand().getCard(i+1), i);
-                    this.getHand().setCard(tempCard, i+1);
-            }
-        }       
-    }
     
     public void printHand()
     {
