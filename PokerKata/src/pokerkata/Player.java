@@ -5,6 +5,7 @@
  */
 package pokerkata;
 
+
 /**
  *
  * @author phili
@@ -31,6 +32,27 @@ public class Player {
             System.out.println(this.getHand().getCard(i).getName());
         }
     }
+    
+    public void sortHand(Hand hand)
+    {
+        Hand handCopy = hand;
+        
+        
+        for (int i = 0; i < handCopy.crd.length; i++)
+        {
+            for (int j = i+1; j < handCopy.crd.length; j++)
+            {
+                if (handCopy.crd[i].getValue() < handCopy.crd[j].getValue())
+                {
+                    Card temp = handCopy.crd[i];
+                    handCopy.crd[i] = handCopy.crd[j];
+                    handCopy.crd[j] = temp;
+                }
+            }
+        }
+        
+    }
+    
 
     public int compareHands(Player player, int ran) {
         if (this.getHand().isStraightFlush()) {

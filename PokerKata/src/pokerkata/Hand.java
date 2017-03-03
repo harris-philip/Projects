@@ -5,6 +5,7 @@
  */
 package pokerkata;
 
+
 /**
  *
  * @author phili
@@ -222,5 +223,7 @@ public class Hand {
             return true;
         }
     }
+    
+    
     
 }

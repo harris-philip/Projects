@@ -5,44 +5,46 @@
  */
 package pokerkata;
 
-import java.util.Scanner;
-
 /**
  *
  * @author phili
  */
-public class PokerKata {
+public class PokerKataTestCases {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner bScan, wScan;
-        String blackCards, whiteCards;
-        Hand blackHand, whiteHand;
-        Player black, white;
 
-        bScan = new Scanner(System.in);
-        wScan = new Scanner(System.in);
+        Hand sHWhite1 = new Hand("2C 3H 4S 8C AH");
+        Hand sHWhite2 = new Hand("2S 8S AS QS 3S");
+        Hand sHWhite3 = new Hand("2C 3H 4S 8C KH");
+        Hand sHWhite4 = new Hand("2D 3H 5C 9S KH");
 
-        System.out.println("Please enter the Cards for Player Black and Player White");
-        System.out.print("Black: ");
-        blackCards = bScan.nextLine();
-        System.out.print("White: ");
-        whiteCards = wScan.nextLine();
-        System.out.println();
+        Hand sHBlack1 = new Hand("2H 3D 5S 9C KD");
+        Hand sHBlack2 = new Hand("2H 4S 4C 2D 4H");
+        Hand sHBlack3 = new Hand("2H 3D 5S 9C KD");
+        Hand sHBlack4 = new Hand("2H 3D 5S 9C KD");
 
-        blackHand = new Hand(blackCards);
-        whiteHand = new Hand(whiteCards);
+        Player white1 = new Player(sHWhite1);
+        Player white2 = new Player(sHWhite2);
+        Player white3 = new Player(sHWhite3);
+        Player white4 = new Player(sHWhite4);
 
-        black = new Player(blackHand);
-        white = new Player(whiteHand);
+        Player black1 = new Player(sHBlack1);
+        Player black2 = new Player(sHBlack2);
+        Player black3 = new Player(sHBlack3);
+        Player black4 = new Player(sHBlack4);
 
-        winningHand(black, white);
+        winningHand(black1, white1);
+        winningHand(black2, white2);
+        winningHand(black3, white3);
+        winningHand(black4, white4);
 
     }
 
-    public static void winningHand(Player black, Player white) {
+    public static void winningHand(Player black, Player white) 
+    {
         int i = 0;
         int nextHighest = 0;
         if (white.compareHands(black, i) == 0) {
@@ -51,20 +53,15 @@ public class PokerKata {
         else if (white.compareHands(black, i) == -1) {
             if (black.getHand().isStraightFlush()) {
                 System.out.println("Black wins. - with Straight Flush");
-            } 
-            else if (black.getHand().isFourOfAKind()) {
+            } else if (black.getHand().isFourOfAKind()) {
                 System.out.println("Black wins. - with Four of a Kind");
-            } 
-            else if (black.getHand().isFullHouse()) {
+            } else if (black.getHand().isFullHouse()) {
                 System.out.println("Black wins. - with Full House");
-            } 
-            else if (black.getHand().isFlush()) {
+            } else if (black.getHand().isFlush()) {
                 System.out.println("Black wins. - with Flush");
-            } 
-            else if (black.getHand().isStraight()) {
+            } else if (black.getHand().isStraight()) {
                 System.out.println("Black wins. - with Straight");
-            } 
-            else if (black.getHand().isThreeOfAKind()) {
+            } else if (black.getHand().isThreeOfAKind()) {
                 System.out.println("Black wins. - with Three of a Kind");
             } 
             else if (black.getHand().isTwoPair()) {
@@ -88,7 +85,7 @@ public class PokerKata {
                 System.out.println("Black wins. - with High Card: " + black.getHand().getCard(nextHighest).getName());
             }
         } 
-        else {
+        else{
             if (white.getHand().isStraightFlush()) {
                 System.out.println("White wins. - with Straight Flush");
             } 
@@ -115,7 +112,7 @@ public class PokerKata {
             } 
             else if (white.getHand().getHighCard().compareValue(black.getHand().getHighCard()) != 0) {
                 System.out.println("White wins. - with High Card: " + white.getHand().getHighCard().getName());
-            } 
+            }
             else {
                 white.sortHand(white.getHand());
                 black.sortHand(black.getHand());
@@ -124,9 +121,7 @@ public class PokerKata {
                         nextHighest = j;
                         break;
                     }
-
                 }
-
                 System.out.println("White wins. - with High Card: " + white.getHand().getCard(nextHighest).getName());
             }
         }

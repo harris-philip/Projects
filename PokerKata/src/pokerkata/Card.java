@@ -16,6 +16,11 @@ public class Card {
     private String suite;
     private String name;
     
+    Card()
+    {
+        
+    }
+    
     public Card (String str)
     {
         str = str.toUpperCase();
