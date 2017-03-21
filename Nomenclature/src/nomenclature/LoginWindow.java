@@ -42,27 +42,27 @@ public class LoginWindow extends javax.swing.JFrame {
         setTitle("Login");
         setResizable(false);
 
-        userLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        userLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         userLabel.setText("Username:");
 
-        userText.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        userText.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         userText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userTextActionPerformed(evt);
             }
         });
 
-        passLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        passLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         passLabel.setText("Password:");
 
-        passText.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        passText.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         passText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passTextActionPerformed(evt);
             }
         });
 
-        cancelBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        cancelBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         cancelBtn.setText("Cancel");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +70,7 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
 
-        submitBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        submitBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

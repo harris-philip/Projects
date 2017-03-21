@@ -77,7 +77,7 @@
     <Component class="javax.swing.JLabel" name="userLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="18" style="1"/>
+          <Font name="Calibri" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Username:"/>
       </Properties>
@@ -85,7 +85,7 @@
     <Component class="javax.swing.JTextField" name="userText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="18" style="0"/>
+          <Font name="Calibri" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
@@ -95,7 +95,7 @@
     <Component class="javax.swing.JLabel" name="passLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="18" style="1"/>
+          <Font name="Calibri" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Password:"/>
       </Properties>
@@ -103,7 +103,7 @@
     <Component class="javax.swing.JPasswordField" name="passText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="18" style="0"/>
+          <Font name="Calibri" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
@@ -113,7 +113,7 @@
     <Component class="javax.swing.JButton" name="cancelBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="14" style="0"/>
+          <Font name="Calibri" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
@@ -124,7 +124,7 @@
     <Component class="javax.swing.JButton" name="submitBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="14" style="0"/>
+          <Font name="Calibri" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>

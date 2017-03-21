@@ -15,14 +15,14 @@ import javax.swing.ImageIcon;
 public class TutorialWindow extends javax.swing.JFrame {
 
     int counter = 1;
-    ImageIcon img1 = new ImageIcon("C:/Users/phili/Pictures/Nomenclature/NomenclatureMainMenu.png"); 
-    ImageIcon img2 = new ImageIcon("C:/Users/phili/Pictures/Nomenclature/NomenclaturePractice.png"); 
-    ImageIcon img3 = new ImageIcon("C:/Users/phili/Pictures/Nomenclature/NomenclatureQuiz.png"); 
-    ImageIcon img4 = new ImageIcon("C:/Users/phili/Pictures/Nomenclature/NomenclatureRandomQuiz.png"); 
-    ImageIcon img5 = new ImageIcon("C:/Users/phili/Pictures/Nomenclature/NomenclatureLogin.png"); 
-    ImageIcon img6 = new ImageIcon("C:/Users/phili/Pictures/Nomenclature/NomenclatureAdvisor.png"); 
-    ImageIcon img7 = new ImageIcon("C:/Users/phili/Pictures/Nomenclature/NomenclatureAdd.png"); 
-    ImageIcon img8 = new ImageIcon("C:/Users/phili/Pictures/Nomenclature/NomenclatureDelete.png"); 
+    ImageIcon img1 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureMainMenu.png")); 
+    ImageIcon img2 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclaturePractice.png")); 
+    ImageIcon img3 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureQuiz.png")); 
+    ImageIcon img4 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureRandomQuiz.png")); 
+    ImageIcon img5 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureLogin.png")); 
+    ImageIcon img6 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureAdvisor.png")); 
+    ImageIcon img7 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureAdd.png")); 
+    ImageIcon img8 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureDelete.png")); 
     public TutorialWindow() {
         initComponents();
         
@@ -80,7 +80,7 @@ public class TutorialWindow extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1000, 1000));
         setResizable(false);
 
-        tutorialLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        tutorialLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         tutorialLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tutorialLabel.setText("Tutorial");
 
@@ -89,7 +89,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         card1.setPreferredSize(new java.awt.Dimension(900, 800));
 
-        page1Text.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        page1Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page1Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         page1Text.setText("This is page 1 of the tutorial");
         page1Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -123,7 +123,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         card2.setPreferredSize(new java.awt.Dimension(900, 800));
 
-        page2Text.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        page2Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page2Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         page2Text.setText("This is page 2 of the tutorial");
         page2Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -157,7 +157,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         card3.setPreferredSize(new java.awt.Dimension(900, 800));
 
-        page3Text.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        page3Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page3Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         page3Text.setText("This is page 3 of the tutorial");
         page3Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -191,6 +191,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         card4.setPreferredSize(new java.awt.Dimension(900, 800));
 
+        page4Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page4Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         page4Text.setText("This is page 4 of the tutorial");
         page4Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -224,6 +225,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         card5.setPreferredSize(new java.awt.Dimension(900, 800));
 
+        page5Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page5Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         page5Text.setText("This is page 5 of the tutorial");
         page5Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -257,6 +259,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         card6.setPreferredSize(new java.awt.Dimension(900, 800));
 
+        page6Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page6Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         page6Text.setText("This is page 6 of the tutorial");
         page6Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -290,6 +293,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         card7.setPreferredSize(new java.awt.Dimension(900, 800));
 
+        page7Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page7Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         page7Text.setText("This is page 7 of the tutorial");
         page7Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -323,6 +327,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         card8.setPreferredSize(new java.awt.Dimension(900, 800));
 
+        page8Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page8Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         page8Text.setText("This is page 8 of the tutorial");
         page8Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -352,7 +357,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         MainPanel.add(card8, "card9");
 
-        exitBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        exitBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -360,7 +365,7 @@ public class TutorialWindow extends javax.swing.JFrame {
             }
         });
 
-        nextBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        nextBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         nextBtn.setText("Next");
         nextBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,7 +373,7 @@ public class TutorialWindow extends javax.swing.JFrame {
             }
         });
 
-        pageLabel.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        pageLabel.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         pageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pageLabel.setText("1/8");
 

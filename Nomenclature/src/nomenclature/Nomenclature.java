@@ -5,6 +5,7 @@
  */
 package nomenclature;
 
+import static java.awt.SystemColor.window;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
@@ -40,6 +41,8 @@ public class Nomenclature {
                 // not worth my time
             }
         }
+        
+        
         
         new MainMenu().setVisible(true);
     }

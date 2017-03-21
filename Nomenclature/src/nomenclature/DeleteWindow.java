@@ -29,11 +29,11 @@ public class DeleteWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
+        noteLabel = new javax.swing.JLabel();
         chemFormText = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        chemFormLabel = new javax.swing.JLabel();
         chemNameText = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        chemNameLabel = new javax.swing.JLabel();
         submitBtn = new javax.swing.JButton();
         cancelBtn = new javax.swing.JButton();
 
@@ -41,30 +41,30 @@ public class DeleteWindow extends javax.swing.JFrame {
         setTitle("Delete");
         setResizable(false);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel3.setText("<html>Note: To delete compounds with different chemical names,<br> but are the same compound-- you must delete each one <br> separately and one at a time.</html>");
+        noteLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        noteLabel.setText("<html>Note: To delete compounds with different chemical names,<br> but are the same compound-- you must delete each one <br> separately and one at a time.</html>");
 
-        chemFormText.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chemFormText.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         chemFormText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chemFormTextActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel2.setText("Chemical Formula:");
+        chemFormLabel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        chemFormLabel.setText("Chemical Formula:");
 
-        chemNameText.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        chemNameText.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         chemNameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chemNameTextActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel1.setText("Chemical Name:");
+        chemNameLabel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        chemNameLabel.setText("Chemical Name:");
 
-        submitBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        submitBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +72,7 @@ public class DeleteWindow extends javax.swing.JFrame {
             }
         });
 
-        cancelBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        cancelBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         cancelBtn.setText("Cancel");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,13 +87,13 @@ public class DeleteWindow extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+                    .addComponent(noteLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
                     .addComponent(chemNameText)
                     .addComponent(chemFormText)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                            .addComponent(chemNameLabel)
+                            .addComponent(chemFormLabel))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -106,19 +106,19 @@ public class DeleteWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(chemNameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(chemNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(chemFormLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(chemFormText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cancelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(noteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -180,11 +180,11 @@ public class DeleteWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelBtn;
+    private javax.swing.JLabel chemFormLabel;
     private javax.swing.JTextField chemFormText;
+    private javax.swing.JLabel chemNameLabel;
     private javax.swing.JTextField chemNameText;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel noteLabel;
     private javax.swing.JButton submitBtn;
     // End of variables declaration//GEN-END:variables
 }

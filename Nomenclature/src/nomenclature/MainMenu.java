@@ -5,17 +5,23 @@
  */
 package nomenclature;
 
+import java.awt.Toolkit;
+import java.net.URL;
+
 /**
  *
  * @author phili
  */
 public class MainMenu extends javax.swing.JFrame {
 
+    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
     /**
      * Creates new form MainMenu
      */
     public MainMenu() {
         initComponents();
+        
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
     }
 
     /**
@@ -31,7 +37,7 @@ public class MainMenu extends javax.swing.JFrame {
         quizBtn = new javax.swing.JButton();
         testBtn = new javax.swing.JButton();
         loginBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        instructionLabel = new javax.swing.JLabel();
         tutorialBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
 
@@ -39,7 +45,7 @@ public class MainMenu extends javax.swing.JFrame {
         setTitle("Main Menu");
         setResizable(false);
 
-        practiceBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        practiceBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         practiceBtn.setText("Nomenclature Practice");
         practiceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,7 +53,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        quizBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        quizBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         quizBtn.setText("Nomenclature Quiz");
         quizBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,7 +61,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        testBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        testBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         testBtn.setText("Nomenclature Test");
         testBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +69,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        loginBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        loginBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         loginBtn.setText("Update Database");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,11 +77,11 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Choose what you would like to do:");
+        instructionLabel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        instructionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        instructionLabel.setText("Choose what you would like to do:");
 
-        tutorialBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tutorialBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         tutorialBtn.setText("Tutorial");
         tutorialBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +89,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        exitBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        exitBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +109,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(practiceBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(testBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(loginBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+                    .addComponent(instructionLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
                     .addComponent(tutorialBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -111,7 +117,7 @@ public class MainMenu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(instructionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(practiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -197,7 +203,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exitBtn;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel instructionLabel;
     private javax.swing.JButton loginBtn;
     private javax.swing.JButton practiceBtn;
     private javax.swing.JButton quizBtn;

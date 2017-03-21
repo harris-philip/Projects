@@ -28,7 +28,7 @@ public class AdvisorWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         addBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        instructionLabel = new javax.swing.JLabel();
         deleteBtn = new javax.swing.JButton();
         mainMenuBtn = new javax.swing.JButton();
 
@@ -36,7 +36,7 @@ public class AdvisorWindow extends javax.swing.JFrame {
         setTitle("Advisor");
         setResizable(false);
 
-        addBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        addBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         addBtn.setText("Add Compound");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,11 +44,11 @@ public class AdvisorWindow extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Choose what you would like to do");
+        instructionLabel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        instructionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        instructionLabel.setText("Choose what you would like to do");
 
-        deleteBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        deleteBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         deleteBtn.setText("Delete Compound");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +56,7 @@ public class AdvisorWindow extends javax.swing.JFrame {
             }
         });
 
-        mainMenuBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        mainMenuBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         mainMenuBtn.setText("Main Menu");
         mainMenuBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +72,7 @@ public class AdvisorWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(mainMenuBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                    .addComponent(instructionLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                     .addComponent(addBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(deleteBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -81,7 +81,7 @@ public class AdvisorWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(instructionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -148,7 +148,7 @@ public class AdvisorWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JButton deleteBtn;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel instructionLabel;
     private javax.swing.JButton mainMenuBtn;
     // End of variables declaration//GEN-END:variables
 }

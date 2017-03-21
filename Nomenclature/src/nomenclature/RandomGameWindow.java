@@ -37,7 +37,7 @@ public class RandomGameWindow extends javax.swing.JFrame {
 
         totalLabel = new javax.swing.JLabel();
         totalScore = new javax.swing.JLabel();
-        questionLabel = new javax.swing.JLabel();
+        questionNumLabel = new javax.swing.JLabel();
         answerField = new javax.swing.JTextField();
         scoreLabel = new javax.swing.JLabel();
         submitBtn = new javax.swing.JButton();
@@ -46,23 +46,24 @@ public class RandomGameWindow extends javax.swing.JFrame {
         rightScore = new javax.swing.JLabel();
         wrongLabel = new javax.swing.JLabel();
         wrongScore = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        instructionsLabel = new javax.swing.JLabel();
+        questionLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Test");
         setResizable(false);
 
-        totalLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        totalLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         totalLabel.setText("Total:");
 
-        totalScore.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        totalScore.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         totalScore.setText("0");
 
-        questionLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        questionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        questionLabel.setText("Question");
+        questionNumLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        questionNumLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        questionNumLabel.setText("Question # 1/20:");
 
-        answerField.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        answerField.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         answerField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         answerField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,10 +71,10 @@ public class RandomGameWindow extends javax.swing.JFrame {
             }
         });
 
-        scoreLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        scoreLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         scoreLabel.setText("Score:");
 
-        submitBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        submitBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,11 +82,11 @@ public class RandomGameWindow extends javax.swing.JFrame {
             }
         });
 
-        rightLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        rightLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         rightLabel.setForeground(new java.awt.Color(51, 102, 0));
         rightLabel.setText("Right:");
 
-        exitBtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        exitBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,21 +94,23 @@ public class RandomGameWindow extends javax.swing.JFrame {
             }
         });
 
-        rightScore.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        rightScore.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         rightScore.setForeground(new java.awt.Color(51, 102, 0));
         rightScore.setText("0");
 
-        wrongLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        wrongLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         wrongLabel.setForeground(new java.awt.Color(153, 0, 0));
         wrongLabel.setText("Wrong:");
 
-        wrongScore.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        wrongScore.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         wrongScore.setForeground(new java.awt.Color(153, 0, 0));
         wrongScore.setText("0");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("<html><b>Instructions</b>: If the <b>Chemical Name</b> is displayed, type in the <b> Chemical Formula</b>. <br>\n<p style = \"margin-left: 53.5px\"> If the <b>Chemical Formula</b> is displayed, type in the <b>Chemical Name</b>. </html>");
+        instructionsLabel.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        instructionsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        instructionsLabel.setText("<html><b>Instructions</b>: If the <b>Chemical Name</b> is displayed, type in the <b> Chemical Formula</b>. <br>\n<p style = \"margin-left: 49px\"> If the <b>Chemical Formula</b> is displayed, type in the <b>Chemical Name</b>. </html>");
+
+        questionLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,10 +119,9 @@ public class RandomGameWindow extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(questionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(answerField)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 22, Short.MAX_VALUE)
+                        .addGap(0, 40, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,7 +141,11 @@ public class RandomGameWindow extends javax.swing.JFrame {
                                 .addComponent(totalLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(totalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jLabel2))
+                    .addComponent(instructionsLabel)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(questionNumLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(questionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -154,10 +160,12 @@ public class RandomGameWindow extends javax.swing.JFrame {
                     .addComponent(wrongScore)
                     .addComponent(totalLabel)
                     .addComponent(totalScore))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(instructionsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(questionNumLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(questionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(answerField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
@@ -264,8 +272,9 @@ public class RandomGameWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField answerField;
     private javax.swing.JButton exitBtn;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel instructionsLabel;
     private javax.swing.JLabel questionLabel;
+    private javax.swing.JLabel questionNumLabel;
     private javax.swing.JLabel rightLabel;
     private javax.swing.JLabel rightScore;
     private javax.swing.JLabel scoreLabel;
