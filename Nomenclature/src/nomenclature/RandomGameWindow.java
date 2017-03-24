@@ -5,8 +5,10 @@
  */
 package nomenclature;
 
+import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.net.URL;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -16,12 +18,14 @@ import javax.swing.JTextField;
  */
 public class RandomGameWindow extends javax.swing.JFrame {
 
+    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
     /**
      * Creates new form RandomGameWindow
      */
     public RandomGameWindow() {
         initComponents();
         
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
         toSubscript(answerField);
         
     }

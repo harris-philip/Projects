@@ -6,6 +6,8 @@
 package nomenclature;
 
 import java.awt.CardLayout;
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.ImageIcon;
 
 /**
@@ -14,6 +16,7 @@ import javax.swing.ImageIcon;
  */
 public class TutorialWindow extends javax.swing.JFrame {
 
+    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
     int counter = 1;
     ImageIcon img1 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureMainMenu.png")); 
     ImageIcon img2 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclaturePractice.png")); 
@@ -25,6 +28,7 @@ public class TutorialWindow extends javax.swing.JFrame {
     ImageIcon img8 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureDelete.png")); 
     public TutorialWindow() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
         
         mainPic.setIcon(img1);
         practicePic.setIcon(img2);

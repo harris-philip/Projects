@@ -5,6 +5,8 @@
  */
 package nomenclature;
 
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class LoginWindow extends javax.swing.JFrame {
 
+    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
     String username = "psteinbach";
     String password = "psteinbach";
     /**
@@ -20,6 +23,7 @@ public class LoginWindow extends javax.swing.JFrame {
      */
     public LoginWindow() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
     }
 
     /**

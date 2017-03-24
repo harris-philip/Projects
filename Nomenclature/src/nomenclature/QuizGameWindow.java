@@ -5,8 +5,10 @@
  */
 package nomenclature;
 
+import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.net.URL;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -17,11 +19,12 @@ import javax.swing.JTextField;
 public class QuizGameWindow extends javax.swing.JFrame {
 
     static int questionNumber = 0;
-    
+    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
 
     public QuizGameWindow() {
         initComponents();
-
+        
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
         toSubscript(answerField);
     }
 

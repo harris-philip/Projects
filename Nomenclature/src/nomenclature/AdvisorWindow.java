@@ -5,17 +5,22 @@
  */
 package nomenclature;
 
+import java.awt.Toolkit;
+import java.net.URL;
+
 /**
  *
  * @author phili
  */
 public class AdvisorWindow extends javax.swing.JFrame {
 
+    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
     /**
      * Creates new form AdvisorWindow
      */
     public AdvisorWindow() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
     }
 
     /**

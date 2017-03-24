@@ -5,6 +5,8 @@
  */
 package nomenclature;
 
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,11 +15,13 @@ import javax.swing.JOptionPane;
  */
 public class DeleteWindow extends javax.swing.JFrame {
 
+    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
     /**
      * Creates new form DeleteWindow
      */
     public DeleteWindow() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
     }
 
     /**
