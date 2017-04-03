@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  */
 public class RandomGameWindow extends javax.swing.JFrame {
 
-    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
+    URL iconImage = this.getClass().getClassLoader().getResource("NomenclaturePics/TaskbarIcon.png");
     /**
      * Creates new form RandomGameWindow
      */
@@ -136,12 +136,12 @@ public class RandomGameWindow extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(rightLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rightScore)
-                                .addGap(18, 18, 18)
+                                .addComponent(rightScore, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(wrongLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(wrongScore)
-                                .addGap(18, 18, 18)
+                                .addComponent(wrongScore, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(totalLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(totalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))

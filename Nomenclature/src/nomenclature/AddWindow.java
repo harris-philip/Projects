@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class AddWindow extends javax.swing.JFrame {
 
-    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
+    URL iconImage = this.getClass().getClassLoader().getResource("NomenclaturePics/TaskbarIcon.png");
     /**
      * Creates new form AddWindow
      */
@@ -40,6 +40,7 @@ public class AddWindow extends javax.swing.JFrame {
         noteLabel = new javax.swing.JLabel();
         submitBtn = new javax.swing.JButton();
         cancelBtn = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Add");
@@ -84,6 +85,14 @@ public class AddWindow extends javax.swing.JFrame {
             }
         });
 
+        jComboBox1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ionic", "Covalent", "Acids", "Anions", "Cations" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,16 +100,17 @@ public class AddWindow extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(noteLabel)
                     .addComponent(chemNameText)
                     .addComponent(chemFormText)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(noteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(chemNameLabel)
                             .addComponent(chemFormLabel))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -117,12 +127,14 @@ public class AddWindow extends javax.swing.JFrame {
                 .addComponent(chemFormLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(chemFormText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cancelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(submitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(noteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1))
+                .addGap(18, 18, 18)
+                .addComponent(noteLabel)
                 .addContainerGap())
         );
 
@@ -131,7 +143,15 @@ public class AddWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Submit Button Not Implemented Yet!!", "Error", JOptionPane.ERROR_MESSAGE);
+        String chemName = chemNameText.getText();
+        String chemForm = chemFormText.getText();       
+        
+        if (chemName.trim().isEmpty() || chemForm.trim().isEmpty())
+            JOptionPane.showMessageDialog(rootPane, "Please fill each field.", "Error", JOptionPane.ERROR_MESSAGE);
+        else
+        {
+            
+        }
     }//GEN-LAST:event_submitBtnActionPerformed
 
     private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
@@ -146,6 +166,10 @@ public class AddWindow extends javax.swing.JFrame {
     private void chemFormTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chemFormTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chemFormTextActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,6 +212,7 @@ public class AddWindow extends javax.swing.JFrame {
     private javax.swing.JTextField chemFormText;
     private javax.swing.JLabel chemNameLabel;
     private javax.swing.JTextField chemNameText;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel noteLabel;
     private javax.swing.JButton submitBtn;
     // End of variables declaration//GEN-END:variables

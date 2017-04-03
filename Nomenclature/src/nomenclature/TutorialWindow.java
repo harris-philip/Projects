@@ -16,16 +16,16 @@ import javax.swing.ImageIcon;
  */
 public class TutorialWindow extends javax.swing.JFrame {
 
-    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
+    URL iconImage = this.getClass().getClassLoader().getResource("NomenclaturePics/TaskbarIcon.png");
     int counter = 1;
-    ImageIcon img1 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureMainMenu.png")); 
-    ImageIcon img2 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclaturePractice.png")); 
-    ImageIcon img3 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureQuiz.png")); 
-    ImageIcon img4 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureRandomQuiz.png")); 
-    ImageIcon img5 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureLogin.png")); 
-    ImageIcon img6 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureAdvisor.png")); 
-    ImageIcon img7 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureAdd.png")); 
-    ImageIcon img8 = new ImageIcon(this.getClass().getResource("/Nomenclature/NomenclatureDelete.png")); 
+    ImageIcon img1 = new ImageIcon(this.getClass().getResource("/NomenclaturePics/NomenclatureMainMenu.png")); 
+    ImageIcon img2 = new ImageIcon(this.getClass().getResource("/NomenclaturePics/NomenclaturePractice.png")); 
+    ImageIcon img3 = new ImageIcon(this.getClass().getResource("/NomenclaturePics/NomenclatureQuiz.png")); 
+    ImageIcon img4 = new ImageIcon(this.getClass().getResource("/NomenclaturePics/NomenclatureRandomQuiz.png")); 
+    ImageIcon img5 = new ImageIcon(this.getClass().getResource("/NomenclaturePics/NomenclatureLogin.png")); 
+    ImageIcon img6 = new ImageIcon(this.getClass().getResource("/NomenclaturePics/NomenclatureAdvisor.png")); 
+    ImageIcon img7 = new ImageIcon(this.getClass().getResource("/NomenclaturePics/NomenclatureAdd.png")); 
+    ImageIcon img8 = new ImageIcon(this.getClass().getResource("/NomenclaturePics/NomenclatureDelete.png")); 
     public TutorialWindow() {
         initComponents();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
@@ -78,10 +78,10 @@ public class TutorialWindow extends javax.swing.JFrame {
         exitBtn = new javax.swing.JButton();
         nextBtn = new javax.swing.JButton();
         pageLabel = new javax.swing.JLabel();
+        backBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tutorial");
-        setPreferredSize(new java.awt.Dimension(1000, 1000));
         setResizable(false);
 
         tutorialLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
@@ -94,8 +94,8 @@ public class TutorialWindow extends javax.swing.JFrame {
         card1.setPreferredSize(new java.awt.Dimension(900, 800));
 
         page1Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        page1Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        page1Text.setText("This is page 1 of the tutorial");
+        page1Text.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        page1Text.setText("<html><p style = \"margin-left: 49px\"><b>WELCOME!</b>\n Here is the tutorial for the Nomenclature Program</p style> created to help aid students with learning Nomenclature. \nOn the left you can see the Main Menu Window, which is the first window you saw when starting up the program.\nWhen you look at the picture to the left, you will notice that there are 4 different colors and 4 numbers.\nEach of these correspond to the different parts that will be talked about in this tutorial for this <b>PARTICULAR</b> Window. \nThere is a tutorial for each window (except for the Tutorial Window). \nOnce you have finished reading this page's tutorial click on the \"Next\" button to continue to the next part of the tutorial.<br>\n<br>\n<b>P.S.</b> We hope that in using this program helps you to study Chemistry Nomenclature! Good Luck! <br>\n<br>\n<p style = \"margin-left: 135px\"><b>Tutorial Part 1: </b></p style>\n<br>\n<b>1)</b> On the Main Menu Picture on the left, you will see three red boxes. \nThose are the different ways that you can use this program to study Nomenclature.\nThe first way that is available is \"Nomenclature Practice\". This is your typical practice, where you will have no question limit.\nHere you can practice to your hearts content!\nThe second way is \"Nomenclature Quiz\". This is to quiz yourself on your knowledge of a chosen type of chemical bonds (i.e. Ionic bonds, Covalent Bonds, Acid Bonds, Cation Bonds, or Anion Bonds).\nThe quiz consists of 20 questions, but no time limit, after all this is just for practice.\nThe third and final way to practice, is to take the \"Nomenclature Test\". The test cover all forms of chemical bonds. It consists of 20 questions as well.\nAlso no time limit.\n<br>\n<br>\n<b>2)</b> On the Main Menu Picture on the left, you will see a green box.\nThe button leads to this window, which is the tutorial window.\n<br>\n<br>\n<b>3)</b> On the Main Menu Picture on the left, you will see a blue box.\nClicking the button will lead to a login window, if you are an admin(a Chemistry Teacher), you will have a username and password that you can enter. After the login page, you will have access to change the\ndatabase that is on the computer. This is for any new chemicals found, or if an error in the program is found.\n<br>\n<br>\n<b>4)</b> On the Main Menu Picture on the left, you will see an orange box.\nClicking on this button exits the program. You can also exit the program by clicking on the red X in the top right corner.\n<br>\n<br>\n<b>Please click \"Next\" in order to move on to the next part of the tutorial, \n\"Back\" to go to the last part, or \"Exit\" to return to the main menu.</b>\n</html>\n\n");
         page1Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         mainPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -116,7 +116,7 @@ public class TutorialWindow extends javax.swing.JFrame {
             .addGroup(card1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(page1Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(page1Text)
                     .addGroup(card1Layout.createSequentialGroup()
                         .addComponent(mainPic, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 278, Short.MAX_VALUE)))
@@ -129,7 +129,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         page2Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page2Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        page2Text.setText("This is page 2 of the tutorial");
+        page2Text.setText("<html><p style = \"margin-left: 135px\"><b>Tutorial Part 2: </b></p style>\n<br>\nThe picture to the left is the Practice Window. \nYou can answer as many questions as you want, and the program will keep going.\nEach question is random, so it is possible to get the same question again. (not likely though)\n<br>\n<br>\n<b>1)</b> On the Picture to the left, you will see a red box. \nThe drop box contains the different types of chemical bonds used for nomenclature. \nBy clicking on one of them, the question that appears on the window will change to correspond with which chemical bond was chosen.\nThis allows you to choose which chemical bond you are practicing.\nBasically, it is a flash card game, without the flash cards.\n<br>\n<br>\n<b>2)</b> On the Picture to the left, you will see a green box.\nHere are the scores for the window. It keeps track of how many you have correct, how many you have gotten wrong, and the total number of questions that you have done.\n<br>\n<br>\n<b>3)</b> On the Picture to the left, you will see a blue box.\nHere are the instructions given for answering the questions.\n\"If the Chemical Name is displayed, type in the Chemical Formula.\nIf the Chemical Formula is displayed, type in the Chemical Name.\"\n<br>\n<br>\n<b>4)</b> On the Picture to the left, you will see an orange box.\nHere is where the question is displayed, and a text box for you to place your answer.\n<b>Note: Numbers are automatically subscripted</b>\n<br>\n<br>\n<b>5)</b> On the Picture to the left, you will see a brown box.\nThere are two buttons here. The first is the \"Submit\" button.\nYou will use this button to have your answer checked, when you have completed your answer.\nThe other button is the \"Exit\" button.\nBy clicking the button, you will be brought back to the Main Menu.\n<br>\n<br>\n<b>Please click \"Next\" in order to move on to the next part of the tutorial, \n\"Back\" to return to the previous part, or \"Exit\" to return to the main menu.</b></html>");
         page2Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         practicePic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -153,7 +153,7 @@ public class TutorialWindow extends javax.swing.JFrame {
                     .addGroup(card2Layout.createSequentialGroup()
                         .addComponent(practicePic, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 278, Short.MAX_VALUE))
-                    .addComponent(page2Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(page2Text))
                 .addContainerGap())
         );
 
@@ -163,7 +163,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         page3Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page3Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        page3Text.setText("This is page 3 of the tutorial");
+        page3Text.setText("<html><p style = \"margin-left: 135px\"><b>Tutorial Part 3: </b></p style>\n<br>\nThe picture to the left is the Quiz. It differs from the normal Practice window. \nSpecifically that you will only answer 20 questions, after that the submit button and the text field will be disabled.\nYou will no longer be able to input anything.\n<br>\n<br>\n<b>1)</b> On the Picture to the left, you will see a red box. \nThe drop box contains the different types of chemical bonds used for nomenclature. \nBy clicking on one of them, the question that appears on the window will change to correspond with which chemical bond was chosen.\nThis allows you to choose which chemical bond you are practicing.\nBasically, it is a flash card game, without the flash cards.\n<br>\n<br>\n<b>2)</b> On the Picture to the left, you will see a green box.\nHere are the scores for the window. It keeps track of how many you have correct, how many you have gotten wrong, and the total number of questions that you have done.\n<br>\n<br>\n<b>3)</b> On the Picture to the left, you will see a blue box.\nHere are the instructions given for answering the questions.\n\"If the Chemical Name is displayed, type in the Chemical Formula.\nIf the Chemical Formula is displayed, type in the Chemical Name.\"\n<br>\n<br>\n<b>4)</b> On the Picture to the left, you will see an orange box.\nHere is where the question is displayed, along with the question number, and a text box for you to place your answer.\n<b>Note: Numbers are automatically subscripted</b>\n<br>\n<br>\n<b>5)</b> On the Picture to the left, you will see a brown box.\nThere are two buttons here. The first is the \"Submit\" button.\nYou will use this button to have your answer checked, when you have completed your answer.\nThe other button is the \"Exit\" button.\nBy clicking the button, you will be brought back to the Main Menu.\n<br>\n<br>\n<b>Please click \"Next\" in order to move on to the next part of the tutorial, \n\"Back\" to return to the previous part, or \"Exit\" to return to the main menu.</b></html");
         page3Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         quizPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -187,7 +187,7 @@ public class TutorialWindow extends javax.swing.JFrame {
                     .addGroup(card3Layout.createSequentialGroup()
                         .addComponent(quizPic, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(page3Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(page3Text))
                 .addContainerGap())
         );
 
@@ -197,7 +197,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         page4Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page4Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        page4Text.setText("This is page 4 of the tutorial");
+        page4Text.setText("<html><p style = \"margin-left: 135px\"><b>Tutorial Part 4: </b></p style>\n<br>\nThe picture to the left is the Test. It differs from both the normal Practice window and the Quiz. \nYou will be givenr 20 questions, and after that the submit button and the text field will be disabled.\nYou will no longer be able to input anything. Also, you will not be able to choose which chemical bond you are being tested on.\nMeaning, You will be randomly questioned on all types of chemical bonds.\n<br>\n<br>\n<b>1)</b> On the Picture to the left, you will see a red box. \nHere are the scores for the window. It keeps track of how many you have correct, how many you have gotten wrong, and the total number of questions that you have done.\n<br>\n<br>\n<b>2)</b> On the Picture to the left, you will see a green box.\nHere are the instructions given for answering the questions.\n\"If the Chemical Name is displayed, type in the Chemical Formula.\nIf the Chemical Formula is displayed, type in the Chemical Name.\"\n<br>\n<br>\n<b>3)</b> On the Picture to the left, you will see a blue box.\nHere is where the question is displayed, along with the question number, and a text box for you to place your answer.\n<b>Note: Numbers are automatically subscripted</b>\n<br>\n<br>\n<b>4)</b> On the Picture to the left, you will see an orange box.\nThere are two buttons here. The first is the \"Submit\" button.\nYou will use this button to have your answer checked, when you have completed your answer.\nThe other button is the \"Exit\" button.\nBy clicking the button, you will be brought back to the Main Menu.\n<br>\n<br>\n<b>Please click \"Next\" in order to move on to the next part of the tutorial, \n\"Back\" to return to the previous part, or \"Exit\" to return to the main menu.</b></html");
         page4Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         randomQuizPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -218,7 +218,7 @@ public class TutorialWindow extends javax.swing.JFrame {
             .addGroup(card4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(card4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(page4Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(page4Text)
                     .addGroup(card4Layout.createSequentialGroup()
                         .addComponent(randomQuizPic, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 278, Short.MAX_VALUE)))
@@ -231,7 +231,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         page5Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page5Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        page5Text.setText("This is page 5 of the tutorial");
+        page5Text.setText("<html><p style = \"margin-left: 135px\"><b>Tutorial Part 5: </b></p style>\n<br>\nHere is the Login window. Any of the teachers who teach Chemistry have login information.\n<br>\n<br>\n<b>1)</b> On the Picture to the left, you will see a red box. \nAdmin: Enter your username.\n<br>\n<br>\n<b>2)</b> On the Picture to the left, you will see a green box.\nAdmin: Enter your password\n<br>\n<br>\n<b>3)</b> On the Picture to the left, you will see a blue box.\nAfter you enter your information, please hit the submit button to be taken to the Admin Window. \nHit \"Cancel\" if you want to return to the Main Menu.\n<br>\n<br>\n<b>Please click \"Next\" in order to move on to the next part of the tutorial, \n\"Back\" to return to the previous part, or \"Exit\" to return to the main menu.</b></html>");
         page5Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         loginPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -252,7 +252,7 @@ public class TutorialWindow extends javax.swing.JFrame {
             .addGroup(card5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(card5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(page5Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(page5Text)
                     .addGroup(card5Layout.createSequentialGroup()
                         .addComponent(loginPic, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 278, Short.MAX_VALUE)))
@@ -265,7 +265,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         page6Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page6Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        page6Text.setText("This is page 6 of the tutorial");
+        page6Text.setText("<html><p style = \"margin-left: 135px\"><b>Tutorial Part 6: </b></p style>\n<br>\nHere is the administration window. Here you can add and delete Chemicals (if any need to be added or deleted.) \nIf you find that the name of a chemical is wrong, or a chemical formula is wrong, please delete the chemical and then re-add it.\n<br>\n<br>\n<b>1)</b> On the Picture to the left, you will see two red boxes. \nThe first box is a button that allows the admin (the Chemistry teacher who logged in) to add a chemical compound to the database.\nThe second box is a button that allows the admin (the Chemistry teacher who logged in) to delete a chemical compound from the database.\n<br>\n<br>\n<b>2)</b> On the Picture to the left, you will see a green box.\nThe box is a button that leads back to the main menu.\n<br>\n<br>\n<b>Please click \"Next\" in order to move on to the next part of the tutorial, \n\"Back\" to return to the previous part, or \"Exit\" to return to the main menu.</b></html>");
         page6Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         advisorPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -286,7 +286,7 @@ public class TutorialWindow extends javax.swing.JFrame {
             .addGroup(card6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(card6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(page6Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(page6Text)
                     .addGroup(card6Layout.createSequentialGroup()
                         .addComponent(advisorPic, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 278, Short.MAX_VALUE)))
@@ -299,7 +299,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         page7Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page7Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        page7Text.setText("This is page 7 of the tutorial");
+        page7Text.setText("<html><p style = \"margin-left: 135px\"><b>Tutorial Part 7: </b></p style>\n<br>\nHere is the window that allows you to add a chemical to the database. Each field is required to add the chemical.\n<br>\n<br>\n<b>1)</b> On the Picture to the left, you will see a red box. \nTo add a chemical to the database, you will first have to enter the chemical's name.\n<br>\n<br>\n<b>2)</b> On the Picture to the left, you will see a green box.\nTo add a chemical to the database, you will next have to enter the chemical's formula.\n<br>\n<br>\n<b>3)</b> On the Picture to the left, you will see a blue box.\nTo add a chemical to the database, you will have to enter the type of bond the chemical is.\n(Enter one of these: Ionic, Covalent, Acid, Anion, Cation)\n<br>\n<br>\n<b>4)</b> On the Picture to the left, you will see an orange box.\nBy clicking the \"Submit\" button, the chemical will be added (if you wanted to add the chemical).\nAll fields are required to be filled, so if one is missing an error will pop up.\n<br>\n<br>\n<b>5)</b> On the Picture to the left, you will see a brown box.\nHere is a note. Please read the note to add multiple chemicals with the same formula but different names.\n<br>\n<br>\n<b>Please click \"Next\" in order to move on to the next part of the tutorial, \n\"Back\" to return to the previous part, or \"Exit\" to return to the main menu.</b></html>");
         page7Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         addPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -323,7 +323,7 @@ public class TutorialWindow extends javax.swing.JFrame {
                     .addGroup(card7Layout.createSequentialGroup()
                         .addComponent(addPic, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 278, Short.MAX_VALUE))
-                    .addComponent(page7Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(page7Text))
                 .addContainerGap())
         );
 
@@ -333,7 +333,7 @@ public class TutorialWindow extends javax.swing.JFrame {
 
         page8Text.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         page8Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        page8Text.setText("This is page 8 of the tutorial");
+        page8Text.setText("<html><p style = \"margin-left: 135px\"><b>Tutorial Part 8: </b></p style>\n<br>\nHere is the window to delete a chemical from the database. Each field is required to delete the chemical.\n<br>\n<br>\n<b>1)</b> On the Picture to the left, you will see a red box. \nTo delete a chemical to the database, you will first have to enter the chemical's name.\n<br>\n<br>\n<b>2)</b> On the Picture to the left, you will see a green box.\nTo delete a chemical to the database, you will next have to enter the chemical's formula.\n<br>\n<br>\n<b>3)</b> On the Picture to the left, you will see a blue box.\nTo delete a chemical to the database, you will have to enter the type of bond the chemical is.\n(Enter one of these: Ionic, Covalent, Acid, Anion, Cation)\n<br>\n<br>\n<b>4)</b> On the Picture to the left, you will see an orange box.\nBy clicking the \"Submit\" button, the chemical will be deleted from the database (if you wanted to delete the chemical).\nAll fields are required to be filled, so if one is missing an error will pop up.\n<br>\n<br>\n<b>5)</b> On the Picture to the left, you will see a brown box.\nHere is a note. Please read the note to delete multiple chemicals with the same formula but different names.\n<br>\n<br>\n<b>Here is the end of the Tutorial, We hope this has been helpful.\nClick \"Exit\" to return to the main menu, \"Next\" to go to the beginning of the tutorial, and \"Back\" to return previous page of the tutorial.</b></html>");
         page8Text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout card8Layout = new javax.swing.GroupLayout(card8);
@@ -352,7 +352,7 @@ public class TutorialWindow extends javax.swing.JFrame {
             .addGroup(card8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(card8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(page8Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(page8Text)
                     .addGroup(card8Layout.createSequentialGroup()
                         .addComponent(deletePic, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 278, Short.MAX_VALUE)))
@@ -381,6 +381,14 @@ public class TutorialWindow extends javax.swing.JFrame {
         pageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pageLabel.setText("1/8");
 
+        backBtn.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -394,6 +402,8 @@ public class TutorialWindow extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(nextBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -410,7 +420,8 @@ public class TutorialWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nextBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nextBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -419,7 +430,6 @@ public class TutorialWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
-        
         CardLayout card = (CardLayout)MainPanel.getLayout();
         card.next(MainPanel);
         counter++;
@@ -438,6 +448,21 @@ public class TutorialWindow extends javax.swing.JFrame {
         new MainMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_exitBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        CardLayout card = (CardLayout)MainPanel.getLayout();
+        card.previous(MainPanel);
+        counter--;
+        if (counter == 0)
+        {
+            counter = 8;
+            pageLabel.setText(String.valueOf(counter) + "/8");
+        }
+        else
+        {
+            pageLabel.setText(String.valueOf(counter) + "/8");
+        }
+    }//GEN-LAST:event_backBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -478,6 +503,7 @@ public class TutorialWindow extends javax.swing.JFrame {
     private javax.swing.JPanel MainPanel;
     private javax.swing.JLabel addPic;
     private javax.swing.JLabel advisorPic;
+    private javax.swing.JButton backBtn;
     private javax.swing.JPanel card1;
     private javax.swing.JPanel card2;
     private javax.swing.JPanel card3;

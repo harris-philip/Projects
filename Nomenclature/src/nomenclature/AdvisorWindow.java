@@ -14,7 +14,7 @@ import java.net.URL;
  */
 public class AdvisorWindow extends javax.swing.JFrame {
 
-    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
+    URL iconImage = this.getClass().getClassLoader().getResource("NomenclaturePics/TaskbarIcon.png");
     /**
      * Creates new form AdvisorWindow
      */

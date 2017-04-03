@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 public class QuizGameWindow extends javax.swing.JFrame {
 
     static int questionNumber = 0;
-    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
+    URL iconImage = this.getClass().getClassLoader().getResource("NomenclaturePics/TaskbarIcon.png");
 
     public QuizGameWindow() {
         initComponents();
@@ -139,22 +139,22 @@ public class QuizGameWindow extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                                 .addComponent(scoreLabel)
                                 .addGap(18, 18, 18)
                                 .addComponent(rightLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rightScore)
-                                .addGap(18, 18, 18)
+                                .addComponent(rightScore, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(wrongLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(wrongScore))
+                                .addComponent(wrongScore, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(comboBoxLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(databaseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(totalLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(totalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -322,15 +322,7 @@ public class QuizGameWindow extends javax.swing.JFrame {
             }
         });
         
-        while (questionNumber < 20)
-        {
-            
-        }
-        
-        if (questionNumber == 20)
-        {
-            new MainMenu().setVisible(true);
-        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

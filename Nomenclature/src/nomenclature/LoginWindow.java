@@ -15,9 +15,10 @@ import javax.swing.JOptionPane;
  */
 public class LoginWindow extends javax.swing.JFrame {
 
-    URL iconImage = this.getClass().getClassLoader().getResource("Nomenclature/TaskbarIcon.png");
-    String username = "psteinbach";
-    String password = "psteinbach";
+    URL iconImage = this.getClass().getClassLoader().getResource("NomenclaturePics/TaskbarIcon.png");
+    private static String admins[][] = new String[4][2];
+    
+    
     /**
      * Creates new form LoginWindow
      */
@@ -137,14 +138,33 @@ public class LoginWindow extends javax.swing.JFrame {
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         String tempUser = userText.getText();
         String tempPass = passText.getText();
-        if (!username.equals(tempUser) || !password.equals(tempPass))
+        String username;
+        String password;
+        int counter = 0;
+        
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 1; j < 2; j++)
+            {     
+                username = admins[i][j-1];
+                password = admins[i][j];
+                
+                if (username.equals(tempUser) && password.equals(tempPass))
+                {
+                    new AdvisorWindow().setVisible(true);
+                    this.dispose();
+                }
+                else
+                {
+                    counter++;
+                }
+            }
+        }
+        
+        if (counter == 4)
         {
             JOptionPane.showMessageDialog(rootPane, "Username or Password is Invalid!", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        else
-        {
-            new AdvisorWindow().setVisible(true);
-            this.dispose();
+
         }
     }//GEN-LAST:event_submitBtnActionPerformed
 
@@ -181,6 +201,15 @@ public class LoginWindow extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+        admins[0][0] = "psteinbach";
+        admins[0][1] = "nomenclature1";
+        admins[1][0] = "lsutton";
+        admins[1][1] = "nomenclature2";
+        admins[2][0] = "gblaustein";
+        admins[2][1] = "nomenclature3";
+        admins[3][0] = "kscheetz";
+        admins[3][1] = "nomenclature4";
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LoginWindow().setVisible(true);
