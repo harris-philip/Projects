@@ -17,8 +17,13 @@ import javax.swing.JTextField;
  * @author phili
  */
 public class PracticeGameWindow extends javax.swing.JFrame {
-
+    
     Scanner scan = new Scanner(System.in);
+    
+    private String prevQues;
+    private String prevAns;
+    private String corAns;
+    
     URL iconImage = this.getClass().getClassLoader().getResource("NomenclaturePics/TaskbarIcon.png");
     /**
      * Creates new form PracticeGameWindow
@@ -27,6 +32,16 @@ public class PracticeGameWindow extends javax.swing.JFrame {
         initComponents();
         
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
+        
+        TheGame.databaseAccess(String.valueOf(databaseCombo.getSelectedItem()).toLowerCase());
+        if(TheGame.displayChoice())
+        {
+            questionLabel.setText(TheGame.formula);
+        }
+        else
+        {
+            questionLabel.setText(TheGame.name);
+        }
         
         toSubscript(answerField);
     }
@@ -54,10 +69,12 @@ public class PracticeGameWindow extends javax.swing.JFrame {
         exitBtn = new javax.swing.JButton();
         comboBoxLabel = new javax.swing.JLabel();
         instructionsLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        prevQuesLabel = new javax.swing.JLabel();
+        actualPrevQues = new javax.swing.JLabel();
+        actualPrevAns = new javax.swing.JLabel();
+        prevAnsLabel = new javax.swing.JLabel();
+        actualCorAns = new javax.swing.JLabel();
+        corAnsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Practice");
@@ -131,21 +148,29 @@ public class PracticeGameWindow extends javax.swing.JFrame {
         instructionsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         instructionsLabel.setText("<html><b>Instructions</b>: If the <b>Chemical Name</b> is displayed, type in the <b> Chemical Formula</b>. <br>\n<p style = \"margin-left: 49px\"> If the <b>Chemical Formula</b> is displayed, type in the <b>Chemical Name</b>. </html>");
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Previous Question:");
+        prevQuesLabel.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        prevQuesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        prevQuesLabel.setText("Previous Question:");
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Previous Question...");
+        actualPrevQues.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        actualPrevQues.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        actualPrevQues.setText("Previous Question...");
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Previous Answer...");
+        actualPrevAns.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        actualPrevAns.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        actualPrevAns.setText("Previous Answer...");
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Previous Answer:");
+        prevAnsLabel.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        prevAnsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        prevAnsLabel.setText("Previous Answer:");
+
+        actualCorAns.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        actualCorAns.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        actualCorAns.setText("Correct Answer...");
+
+        corAnsLabel.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        corAnsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        corAnsLabel.setText("Correct Answer:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,16 +202,20 @@ public class PracticeGameWindow extends javax.swing.JFrame {
                         .addComponent(databaseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(actualPrevQues, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                .addComponent(actualPrevAns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(prevQuesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(prevAnsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(corAnsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(actualCorAns, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(instructionsLabel))
+                    .addComponent(instructionsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -213,21 +242,25 @@ public class PracticeGameWindow extends javax.swing.JFrame {
                 .addComponent(answerField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(49, 49, 49))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
+                        .addComponent(prevQuesLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
+                        .addComponent(actualPrevQues)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
+                        .addComponent(corAnsLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addContainerGap(63, Short.MAX_VALUE))))
+                        .addComponent(actualCorAns)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(prevAnsLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(actualPrevAns)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -235,27 +268,14 @@ public class PracticeGameWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void databaseComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_databaseComboActionPerformed
-        String table = String.valueOf(databaseCombo.getSelectedItem()).toLowerCase();
-        
-        if (table.equals("anions"))
+        TheGame.databaseAccess(String.valueOf(databaseCombo.getSelectedItem()).toLowerCase());
+        if(TheGame.displayChoice())
         {
-            System.out.println("Table has been switched to " + table + " table.");
+            questionLabel.setText(TheGame.formula);
         }
-        else if (table.equals("cations"))
+        else
         {
-            System.out.println("Table has been switched to " + table + " table.");
-        }
-        else if (table.equals("acids"))
-        {
-            System.out.println("Table has been switched to " + table + " table.");
-        }
-        else if (table.equals("ionic"))
-        {
-            System.out.println("Table has been switched to " + table + " table.");
-        }
-        else if (table.equals("covalent"))
-        {
-            System.out.println("Table has been switched to " + table + " table.");
+            questionLabel.setText(TheGame.name);
         }
     }//GEN-LAST:event_databaseComboActionPerformed
 
@@ -265,7 +285,34 @@ public class PracticeGameWindow extends javax.swing.JFrame {
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         String text = answerField.getText();
+        String right = rightScore.getText();
+        String wrong = wrongScore.getText();
+        String total = totalScore.getText();
         
+        if(TheGame.name.equals(text) || TheGame.formula.equals(text))
+        {
+            right = String.valueOf(Integer.parseInt(right) + 1);
+            total = String.valueOf(Integer.parseInt(total) + 1);
+        }
+        else
+        {
+            wrong = String.valueOf(Integer.parseInt(wrong) + 1);
+            total = String.valueOf(Integer.parseInt(total) + 1);
+        }
+        
+        rightScore.setText(right);
+        wrongScore.setText(wrong);
+        totalScore.setText(total);
+        answerField.setText("");
+        TheGame.databaseAccess(String.valueOf(databaseCombo.getSelectedItem()).toLowerCase());
+        if(TheGame.displayChoice())
+        {
+            questionLabel.setText(TheGame.formula);
+        }
+        else
+        {
+            questionLabel.setText(TheGame.name);
+        }        
     }//GEN-LAST:event_submitBtnActionPerformed
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
@@ -279,39 +326,7 @@ public class PracticeGameWindow extends javax.swing.JFrame {
             public void keyReleased(KeyEvent e) {
                 JTextField textField = (JTextField) e.getSource();
                 String string1 = textField.getText();
-                char[] charArray = string1.toCharArray();
-                char a;
-                String[] stringArray = new String[charArray.length];
-                String string2;
-                for (int i = 0; i < charArray.length; i++) {
-                    a = charArray[i];
-                    if (a == '0') {
-                        stringArray[i] = "\u2080";
-                    } else if (a == '1') {
-                        stringArray[i] = "\u2081";
-                    } else if (a == '2') {
-                        stringArray[i] = "\u2082";
-                    } else if (a == '3') {
-                        stringArray[i] = "\u2083";
-                    } else if (a == '4') {
-                        stringArray[i] = "\u2084";
-                    } else if (a == '5') {
-                        stringArray[i] = "\u2085";
-                    } else if (a == '6') {
-                        stringArray[i] = "\u2086";
-                    } else if (a == '7') {
-                        stringArray[i] = "\u2087";
-                    } else if (a == '8') {
-                        stringArray[i] = "\u2088";
-                    } else if (a == '9') {
-                        stringArray[i] = "\u2089";
-                    } else {
-                        stringArray[i] = Character.toString(a);
-                    }
-                }
-
-                string2 = String.join("", stringArray);
-                textField.setText(string2);
+                textField.setText(SubScriptFinder.changer2(string1));
             }
         });
     }
@@ -351,15 +366,17 @@ public class PracticeGameWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel actualCorAns;
+    private javax.swing.JLabel actualPrevAns;
+    private javax.swing.JLabel actualPrevQues;
     private javax.swing.JTextField answerField;
     private javax.swing.JLabel comboBoxLabel;
+    private javax.swing.JLabel corAnsLabel;
     private javax.swing.JComboBox<String> databaseCombo;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel instructionsLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel prevAnsLabel;
+    private javax.swing.JLabel prevQuesLabel;
     private javax.swing.JLabel questionLabel;
     private javax.swing.JLabel rightLabel;
     private javax.swing.JLabel rightScore;

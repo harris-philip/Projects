@@ -53,18 +53,24 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel2" pref="165" max="32767" attributes="0"/>
-                          <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="actualPrevQues" pref="165" max="32767" attributes="0"/>
+                              <Component id="actualPrevAns" alignment="0" max="32767" attributes="0"/>
+                              <Component id="prevQuesLabel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="prevAnsLabel" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="corAnsLabel" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                              <Component id="actualCorAns" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="29" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="submitBtn" min="-2" pref="109" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="exitBtn" min="-2" pref="109" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="instructionsLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="instructionsLabel" alignment="0" pref="430" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -96,7 +102,7 @@
               <Component id="answerField" min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="66" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="submitBtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="exitBtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
@@ -105,14 +111,18 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="prevQuesLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="actualPrevQues" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="corAnsLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="63" max="32767" attributes="0"/>
+                      <Component id="actualCorAns" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="prevAnsLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="actualPrevAns" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -269,7 +279,7 @@
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;Instructions&lt;/b&gt;: If the &lt;b&gt;Chemical Name&lt;/b&gt; is displayed, type in the &lt;b&gt; Chemical Formula&lt;/b&gt;. &lt;br&gt;&#xa;&lt;p style = &quot;margin-left: 49px&quot;&gt; If the &lt;b&gt;Chemical Formula&lt;/b&gt; is displayed, type in the &lt;b&gt;Chemical Name&lt;/b&gt;. &lt;/html&gt;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="prevQuesLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="11" style="0"/>
@@ -278,7 +288,7 @@
         <Property name="text" type="java.lang.String" value="Previous Question:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="actualPrevQues">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="11" style="0"/>
@@ -287,7 +297,7 @@
         <Property name="text" type="java.lang.String" value="Previous Question..."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="actualPrevAns">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="11" style="0"/>
@@ -296,13 +306,31 @@
         <Property name="text" type="java.lang.String" value="Previous Answer..."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="prevAnsLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="11" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Previous Answer:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="actualCorAns">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="11" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Correct Answer..."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="corAnsLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="11" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Correct Answer:"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -9,7 +9,6 @@ import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.net.URL;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -17,14 +16,30 @@ import javax.swing.JTextField;
  * @author phili
  */
 public class QuizGameWindow extends javax.swing.JFrame {
+    
+    private int questionNumber = 1;
+    
+    private String prevQues;
+    private String prevAns;
+    private String corAns;
 
-    static int questionNumber = 0;
     URL iconImage = this.getClass().getClassLoader().getResource("NomenclaturePics/TaskbarIcon.png");
 
     public QuizGameWindow() {
         initComponents();
         
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
+        
+        TheGame.databaseAccess(String.valueOf(databaseCombo.getSelectedItem()).toLowerCase());
+        if(TheGame.displayChoice())
+        {
+            questionLabel.setText(TheGame.formula);
+        }
+        else
+        {
+            questionLabel.setText(TheGame.name);
+        }
+        
         toSubscript(answerField);
     }
 
@@ -40,7 +55,7 @@ public class QuizGameWindow extends javax.swing.JFrame {
         totalLabel = new javax.swing.JLabel();
         totalScore = new javax.swing.JLabel();
         databaseCombo = new javax.swing.JComboBox<>();
-        questionNumLabel = new javax.swing.JLabel();
+        qNumLabel = new javax.swing.JLabel();
         answerField = new javax.swing.JTextField();
         scoreLabel = new javax.swing.JLabel();
         submitBtn = new javax.swing.JButton();
@@ -52,10 +67,12 @@ public class QuizGameWindow extends javax.swing.JFrame {
         comboBoxLabel = new javax.swing.JLabel();
         instructionsLabel = new javax.swing.JLabel();
         questionLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        prevQuesLabel = new javax.swing.JLabel();
+        actualPrevQues = new javax.swing.JLabel();
+        prevAnsLabel = new javax.swing.JLabel();
+        actualPrevAns = new javax.swing.JLabel();
+        actualCorAns = new javax.swing.JLabel();
+        corAnsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quiz");
@@ -75,9 +92,9 @@ public class QuizGameWindow extends javax.swing.JFrame {
             }
         });
 
-        questionNumLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        questionNumLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        questionNumLabel.setText("Question # 1/20:");
+        qNumLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        qNumLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        qNumLabel.setText("Question # 1/20:");
 
         answerField.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         answerField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -131,21 +148,29 @@ public class QuizGameWindow extends javax.swing.JFrame {
 
         questionLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Previous Question:");
+        prevQuesLabel.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        prevQuesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        prevQuesLabel.setText("Previous Question:");
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Previous Question...");
+        actualPrevQues.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        actualPrevQues.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        actualPrevQues.setText("Previous Question...");
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Previous Answer:");
+        prevAnsLabel.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        prevAnsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        prevAnsLabel.setText("Previous Answer:");
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Previous Answer...");
+        actualPrevAns.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        actualPrevAns.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        actualPrevAns.setText("Previous Answer...");
+
+        actualCorAns.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        actualCorAns.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        actualCorAns.setText("Correct Answer...");
+
+        corAnsLabel.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        corAnsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        corAnsLabel.setText("Correct Answer:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,12 +180,19 @@ public class QuizGameWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(actualPrevQues, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                    .addComponent(actualPrevAns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(prevAnsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(prevQuesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(44, 44, 44))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(corAnsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(actualCorAns, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -169,7 +201,6 @@ public class QuizGameWindow extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(scoreLabel)
                                 .addGap(18, 18, 18)
                                 .addComponent(rightLabel)
@@ -189,7 +220,7 @@ public class QuizGameWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(totalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(questionNumLabel)
+                        .addComponent(qNumLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(questionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -214,24 +245,28 @@ public class QuizGameWindow extends javax.swing.JFrame {
                 .addComponent(instructionsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(questionNumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(qNumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(questionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(answerField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(prevQuesLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(actualPrevQues)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
+                        .addComponent(corAnsLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
-                .addGap(49, 49, 49))
+                        .addComponent(actualCorAns)))
+                .addGap(4, 4, 4)
+                .addComponent(prevAnsLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(actualPrevAns)
+                .addContainerGap())
         );
 
         pack();
@@ -239,35 +274,80 @@ public class QuizGameWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void databaseComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_databaseComboActionPerformed
-        String table = String.valueOf(databaseCombo.getSelectedItem()).toLowerCase();
-        
-        if (table.equals("anions"))
+        TheGame.databaseAccess(String.valueOf(databaseCombo.getSelectedItem()).toLowerCase());
+        if(TheGame.displayChoice())
         {
-            System.out.println("Table has been switched to " + table + " table.");
+            questionLabel.setText(TheGame.formula);
         }
-        else if (table.equals("cations"))
+        else
         {
-            System.out.println("Table has been switched to " + table + " table.");
+            questionLabel.setText(TheGame.name);
         }
-        else if (table.equals("acids"))
         {
-            System.out.println("Table has been switched to " + table + " table.");
-        }
-        else if (table.equals("ionic"))
-        {
-            System.out.println("Table has been switched to " + table + " table.");
-        }
-        else if (table.equals("covalent"))
-        {
-            System.out.println("Table has been switched to " + table + " table.");
         }    }//GEN-LAST:event_databaseComboActionPerformed
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-        String text = answerField.getText();
+        databaseCombo.setEnabled(false);
+        if(questionNumber < 20)
+        {
+            String text = answerField.getText();
+            String right = rightScore.getText();
+            String wrong = wrongScore.getText();
+            String total = totalScore.getText();
         
-        questionLabel.setText((questionNumber + 1) +"/20");
-        questionNumber++;
+            if(TheGame.name.equals(text) || TheGame.formula.equals(text))
+            {
+                right = String.valueOf(Integer.parseInt(right) + 1);
+                total = String.valueOf(Integer.parseInt(total) + 1);
+            }
+            else
+            {
+                wrong = String.valueOf(Integer.parseInt(wrong) + 1);
+                total = String.valueOf(Integer.parseInt(total) + 1);
+            }
         
+            rightScore.setText(right);
+            wrongScore.setText(wrong);
+            totalScore.setText(total);
+            answerField.setText("");
+            TheGame.databaseAccess(String.valueOf(databaseCombo.getSelectedItem()).toLowerCase());
+            if(TheGame.displayChoice())
+            {
+                questionLabel.setText(TheGame.formula);
+            }
+            else
+            {
+                questionLabel.setText(TheGame.name);
+            }
+        
+            qNumLabel.setText("Question #" + (questionNumber + 1) +"/20");
+            questionNumber++;
+        }
+        else
+        {
+            answerField.setEnabled(false);
+            submitBtn.setEnabled(false);
+            String text = answerField.getText();
+            String right = rightScore.getText();
+            String wrong = wrongScore.getText();
+            String total = totalScore.getText();
+        
+            if(TheGame.name.equals(text) || TheGame.formula.equals(text))
+            {
+                right = String.valueOf(Integer.parseInt(right) + 1);
+                total = String.valueOf(Integer.parseInt(total) + 1);
+            }
+            else
+            {
+                wrong = String.valueOf(Integer.parseInt(wrong) + 1);
+                total = String.valueOf(Integer.parseInt(total) + 1);
+            }
+        
+            rightScore.setText(right);
+            wrongScore.setText(wrong);
+            totalScore.setText(total);
+            answerField.setText("");
+        }        
     }//GEN-LAST:event_submitBtnActionPerformed
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
@@ -286,46 +366,14 @@ public class QuizGameWindow extends javax.swing.JFrame {
             public void keyReleased(KeyEvent e) {
                 JTextField textField = (JTextField) e.getSource();
                 String string1 = textField.getText();
-                char[] charArray = string1.toCharArray();
-                char a;
-                String[] stringArray = new String[charArray.length];
-                String string2;
-                for (int i = 0; i < charArray.length; i++) {
-                    a = charArray[i];
-                    if (a == '0') {
-                        stringArray[i] = "\u2080";
-                    } else if (a == '1') {
-                        stringArray[i] = "\u2081";
-                    } else if (a == '2') {
-                        stringArray[i] = "\u2082";
-                    } else if (a == '3') {
-                        stringArray[i] = "\u2083";
-                    } else if (a == '4') {
-                        stringArray[i] = "\u2084";
-                    } else if (a == '5') {
-                        stringArray[i] = "\u2085";
-                    } else if (a == '6') {
-                        stringArray[i] = "\u2086";
-                    } else if (a == '7') {
-                        stringArray[i] = "\u2087";
-                    } else if (a == '8') {
-                        stringArray[i] = "\u2088";
-                    } else if (a == '9') {
-                        stringArray[i] = "\u2089";
-                    } else {
-                        stringArray[i] = Character.toString(a);
-                    }
-                }
-
-                string2 = String.join("", stringArray);
-                textField.setText(string2);
+                textField.setText(SubScriptFinder.changer2(string1));
             }
         });
     }
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) {        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -339,13 +387,13 @@ public class QuizGameWindow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QuizGameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PracticeGameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QuizGameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PracticeGameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QuizGameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PracticeGameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QuizGameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PracticeGameWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -360,17 +408,19 @@ public class QuizGameWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel actualCorAns;
+    private javax.swing.JLabel actualPrevAns;
+    private javax.swing.JLabel actualPrevQues;
     private javax.swing.JTextField answerField;
     private javax.swing.JLabel comboBoxLabel;
+    private javax.swing.JLabel corAnsLabel;
     private javax.swing.JComboBox<String> databaseCombo;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel instructionsLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel prevAnsLabel;
+    private javax.swing.JLabel prevQuesLabel;
+    private javax.swing.JLabel qNumLabel;
     private javax.swing.JLabel questionLabel;
-    private javax.swing.JLabel questionNumLabel;
     private javax.swing.JLabel rightLabel;
     private javax.swing.JLabel rightScore;
     private javax.swing.JLabel scoreLabel;
