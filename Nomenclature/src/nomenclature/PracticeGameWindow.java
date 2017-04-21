@@ -9,7 +9,6 @@ import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.net.URL;
-import java.util.Scanner;
 import javax.swing.JTextField;
 
 /**
@@ -17,12 +16,10 @@ import javax.swing.JTextField;
  * @author phili
  */
 public class PracticeGameWindow extends javax.swing.JFrame {
-    
-    Scanner scan = new Scanner(System.in);
-    
-    private String prevQues;
-    private String prevAns;
-    private String corAns;
+   
+    private String prevQues = "";
+    private String prevAns = "";
+    private String corAns = "";
     
     URL iconImage = this.getClass().getClassLoader().getResource("NomenclaturePics/TaskbarIcon.png");
     /**
@@ -30,6 +27,9 @@ public class PracticeGameWindow extends javax.swing.JFrame {
      */
     public PracticeGameWindow() {
         initComponents();
+        actualPrevQues.setText("");
+        actualPrevAns.setText("");
+        actualCorAns.setText("");
         
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(iconImage));
         
@@ -289,6 +289,10 @@ public class PracticeGameWindow extends javax.swing.JFrame {
         String wrong = wrongScore.getText();
         String total = totalScore.getText();
         
+        actualPrevQues.setText(prevQues);
+        actualPrevAns.setText(prevAns);
+        actualCorAns.setText(corAns);
+               
         if(TheGame.name.equals(text) || TheGame.formula.equals(text))
         {
             right = String.valueOf(Integer.parseInt(right) + 1);
@@ -312,7 +316,19 @@ public class PracticeGameWindow extends javax.swing.JFrame {
         else
         {
             questionLabel.setText(TheGame.name);
-        }        
+        }
+        
+        if(questionLabel.getText().equals(TheGame.formula))
+        {
+            corAns = TheGame.name;
+        }
+        else
+        {
+            corAns = TheGame.formula;
+        }
+        
+        prevQues = questionLabel.getText();
+        prevAns = text;        
     }//GEN-LAST:event_submitBtnActionPerformed
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
